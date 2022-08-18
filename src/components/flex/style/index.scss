@@ -1,0 +1,69 @@
+.u-row {
+    display: flex;
+    box-sizing: border-box;
+    flex-flow: row wrap;
+}
+
+.u-col {
+    position: relative;
+    max-width: 100%;
+    min-height: 1px;
+}
+
+$counts: 24;
+$col: "u-col";
+@for $i from 1 through 24 {
+    .#{$col}-#{$i} {
+        display: block;
+        box-sizing: border-box;
+        //percentage:是一個math函數，參考less。
+        max-width: percentage(calc($i / $counts));
+        /*
+        *flex: flex-grow flex-shrink flex-basis;
+        *flex-grow：（必填参数）一个数字，用来设置项目相对于其他项目的增长量，默认值为 0；
+        *flex-shrink：（选填参数）一个数字，用来设置项目相对于其他项目的收缩量，默认值为 1；
+        *flex-basis：（选填参数）项目的长度，合法值为 auto（默认值，表示自动）、inherit（表示从父元素继承该属性的值） 或者以具体的值加 "%"、"px"、"em" 等单位的形式。v
+        */
+        flex: 0 0 percentage(calc($i / $counts));
+    }
+    .#{$col}-offset-#{$i} {
+        margin-left: percentage(calc($i / $counts));
+    }
+}
+
+.u-row-flex {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.u-row-flex-top {
+    align-items: flex-start;
+}
+
+.u-row-flex-middle {
+    align-items: center;
+}
+
+.u-row-flex-bottom {
+    align-items: flex-end;
+}
+
+.u-row-flex-start {
+    justify-content: flex-start;
+}
+
+.u-row-flex-end {
+    justify-content: flex-end;
+}
+
+.u-row-flex-center {
+    justify-content: center;
+}
+
+.u-row-flex-space-around {
+    justify-content: space-around;
+}
+
+.u-row-flex-space-between {
+    justify-content: space-between;
+}

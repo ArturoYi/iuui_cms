@@ -1,0 +1,376 @@
+.u-calendar {
+    display: inline-block;
+    user-select: none;
+    // float: left;
+    @include color("color-primary");
+    // color: var(--kui-color-font);
+    // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    & + .u-calendar {
+        @include border-left(1px, solid, "border-base");
+        // border-left: solid 1px var(--kui-color-border);
+        // margin-left: 5px;
+        //   padding-left: 5px;
+        //   .u-calendar-time {
+        //     border-left: solid 5px #efefef;
+        //     box-sizing: content-box;
+        //   }
+        .u-calendar-time-picker {
+            // border-left: 1px solid var(--kui-color-border);
+        }
+    }
+    .u-btn {
+        transition: none;
+    }
+    .u-calendar-body {
+        // width: 215px;
+        position: relative;
+        min-height: 277px;
+        width: 284px;
+        padding: 0 16px 0 16px;
+        box-sizing: border-box;
+    }
+    .u-calendar-head {
+        // line-height: 32px;
+        // height: 32px;
+        text-align: center;
+        position: relative;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        span {
+            @include color("color-primary");
+            // color: var(--kui-color-font);
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            &:hover {
+                @include color("primary");
+                // color: var(--kui-color-main);
+            }
+        }
+        // .u-calendar-prev-month-btn, .u-calendar-next-month-btn, .u-calendar-prev-year-btn, .u-calendar-next-year-btn {
+        //   // position: absolute;
+        //   color: var(--kui-color-icon);
+        //   padding: 0 5px;
+        //   font-size: 16px;
+        // }
+        .u-calendar-year-select,
+        .u-calendar-month-select,
+        .u-calendar-day-select {
+            font-size: 14px;
+            // padding: 0 2px;
+            position: relative;
+            font-weight: bold;
+            flex: 1;
+        }
+        // .u-calendar-prev-year-btn {
+        //   left: 6px;
+        // }
+        // .u-calendar-prev-month-btn {
+        //   left: 24px;
+        // }
+        // .u-calendar-next-year-btn {
+        //   right: 6px;
+        // }
+        // .u-calendar-next-month-btn {
+        //   right: 24px;
+        // }
+        .u-calendar-body {
+            // position: relative;
+            // width: 215px;
+        }
+    }
+    .u-calendar-days {
+        font-size: 0;
+        padding-bottom: 5px;
+        span {
+            width: 36px;
+            height: 36px;
+            // line-height: 23px;
+            // margin: 5px 0 0 5px;
+            font-size: 14px;
+            display: inline-block;
+            text-align: center;
+            box-sizing: border-box;
+            //
+        }
+    }
+    .u-calendar-years,
+    .u-calendar-months {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        @include background("background-base");
+        // background: var(--kui-color-control-10);
+        top: 0;
+        font-size: 0;
+        text-align: center;
+        box-sizing: border-box;
+        overflow: auto;
+        @include border-top(1px, solid, "border-base");
+        // border-top: 1px solid var(--kui-color-border);
+        span {
+            font-size: 14px;
+            width: auto;
+            display: block;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            height: 32px;
+            line-height: 32px;
+            box-sizing: border-box;
+            margin: 8px;
+            border-radius: $radius;
+            position: relative;
+            cursor: pointer;
+            &:hover {
+                @include background-color("background-base");
+                // background-color: var(--kui-color-hover);
+            }
+        }
+        .u-calendar-item-selected {
+            // background-color: var(--kui-color-selected);
+            @include background-color("background-base");
+        }
+    }
+    .u-calendar-years {
+        @include border-right(1px, solid, "border-base");
+        // border-right: 1px solid var(--kui-color-border);
+        left: 0;
+    }
+    .u-calendar-months {
+        right: 0;
+    }
+    .u-calendar-footer {
+        @include border-top(1px, solid, "border-base");
+        // border-top: 1px solid var(--kui-color-border);
+        position: relative;
+        z-index: 1;
+        padding: 5px 8px;
+        text-align: right;
+        // height: 26px;
+        .u-btn {
+            cursor: pointer;
+        }
+        .u-calendar-btn-today {
+            float: left;
+        }
+        .u-calendar-btn-ok {
+            margin-left: 8px;
+        }
+    }
+    .u-calendar-weekdays {
+        font-weight: 500;
+        @include border-bottom(1px, solid, "border-base");
+        // border-bottom: 1px solid var(--kui-color-border);
+        .u-calendar-weekday {
+            width: 36px;
+            height: 36px;
+            display: inline-block;
+            text-align: center;
+            line-height: 36px;
+            @include color("icon");
+            font-size: 12px;
+        }
+    }
+    .u-calendar-date {
+        cursor: pointer;
+        @include color("color-primary");
+        // color: var(--kui-color-font);
+        border-radius: $radius;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        overflow: hidden;
+        border: 1px solid transparent;
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        font-size: 14px;
+        margin: 2px;
+        box-sizing: border-box;
+        &:hover {
+            @include background("primary-80");
+            // background: var(--kui-color-main-80);
+        }
+    }
+    .u-calendar-date-on {
+        @include background("primary-80");
+    }
+    .u-calendar-date-out {
+        @include color("icon");
+        background: none;
+    }
+    span.u-calendar-date-today {
+        @include border(1px, solid, "primary");
+        // border: 1px solid var(--kui-color-main);
+        &:after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            @include background("primary");
+            right: 1px;
+            top: 1px;
+            border-radius: 50%;
+        }
+    }
+    .u-calendar-date.u-calendar-item-selected {
+    }
+    .u-calendar-date.u-calendar-item-selected {
+        color: #fff;
+        font-weight: bold;
+        @include background("primary");
+        // background: var(--kui-color-main);
+        border-radius: $radius;
+        &.u-calendar-item-disabled {
+            @include border(1px, solid, "disable-border");
+            // border: 1px solid var(--kui-color-disable-border);
+            box-sizing: border-box;
+            &::after {
+                @include background("disable-background");
+                // background: var(--kui-color-disable-border);
+            }
+        }
+        &:hover {
+            @include background("primary");
+            // background: var(--kui-color-main);
+        }
+        &::after {
+            background: #fff;
+        }
+    }
+    .u-calendar-date.u-calendar-item-disabled {
+        cursor: not-allowed;
+        @include color("disable-color");
+        // color: var(--kui-color-disable-color);
+        @include background("disable-background");
+        // background: var(--kui-color-disable-background);
+        &.u-calendar-date-today {
+            // border-color: var(--kui-color-disable-border);
+            @include border(1px, solid, "disable-border");
+            &::after {
+                // background: var(--kui-color-disable-border);
+                @include background("disable-border");
+            }
+        }
+        &:hover {
+            // background: var(--kui-color-disable-background);
+            @include background("disable-background");
+        }
+    }
+    .u-calendar-time-picker {
+        // position: absolute;
+        width: 100%;
+        // height: 100%;
+        height: 276px;
+        // left: 0;
+        // top: 0;
+        @include background("background-base");
+        // background: var(--kui-color-control-10);
+        @include border-top(1px, solid, "border-base");
+        // border-top: 1px solid var(--kui-color-border);
+        display: flex;
+        .u-calendar-time-picker-select {
+            flex: 1;
+            // width: 33.333%;
+            // font-size: 0;
+            overflow: hidden;
+            // height: 215px;
+            height: 100%;
+            // border-right: 1px solid var(--kui-color-border);
+            @include border-right(1px, solid, "border-base");
+            box-sizing: border-box;
+            float: left;
+            &:hover {
+                overflow-y: auto;
+            }
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                width: 100%;
+                box-sizing: border-box;
+                li {
+                    display: block;
+                    font-size: 14px;
+                    box-sizing: content-box;
+                    width: 100%;
+                    height: 32px;
+                    margin: 0;
+                    padding-left: 30px;
+                    line-height: 32px;
+                    list-style: none;
+                    cursor: pointer;
+                    &:hover {
+                        // background: var(--kui-color-main-90);
+                        @include background("primary-90");
+                    }
+                    &:last-child::after {
+                        display: block;
+                        height: 192px;
+                        content: "";
+                    }
+                }
+            }
+            &:last-child {
+                border: none;
+            }
+            li.u-calendar-time-disabled {
+                // color: var(--kui-color-disable-color);
+                @include color("disable-color");
+                cursor: not-allowed;
+            }
+        }
+        .u-calendar-time-selected {
+            // color: var(--kui-color-main);
+            @include color("primary");
+            font-weight: bold;
+            // background: var(--kui-color-control-10);
+            @include background("background-base");
+        }
+    }
+}
+
+.u-calendar-small {
+    .u-calendar-body {
+        width: 216px;
+        padding: 0;
+        min-height: 221px;
+    }
+    .u-calendar-time-picker {
+        height: 220px;
+        .u-calendar-time-picker-select ul li {
+            font-size: 12px;
+        }
+    }
+    .u-calendar-head {
+        padding: 8px;
+        .u-btn {
+            font-size: 12px;
+        }
+    }
+    .u-calendar-weekdays {
+        padding: 0 10px;
+        .u-calendar-weekday {
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+        }
+    }
+    .u-calendar-weeks {
+        padding: 0 10px;
+    }
+    .u-calendar-date {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 12px;
+    }
+    .u-calendar-years,
+    .u-calendar-months {
+        span {
+            font-size: 12px;
+        }
+    }
+}

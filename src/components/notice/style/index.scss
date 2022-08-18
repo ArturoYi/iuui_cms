@@ -1,0 +1,118 @@
+.u-notice {
+    font-size: 14px;
+    line-height: 1.5;
+    //   color: var(--kui-color-font);
+    @include color("color-primary");
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: fixed;
+    z-index: 1010;
+    width: 384px;
+    max-width: calc(100vw - 32px);
+    margin-right: 24px;
+    right: 0px;
+    top: 24px;
+    bottom: auto;
+    .u-notice-box {
+        box-sizing: content-box;
+        transition: all 0.3s ease-in-out;
+        padding: 16px 35px 16px 16px;
+        border-radius: $radius;
+        -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        // background: var(--kui-color-control-10);
+        @include background("background-base");
+        line-height: 1.5;
+        position: relative;
+        margin-bottom: 16px;
+        overflow: hidden;
+    }
+    .u-notice-has-icon {
+        padding-left: 45px;
+    }
+    .u-notice-title {
+        font-size: 16px;
+        // color: var(--kui-color-title);
+        @include color("color-primary");
+        margin-bottom: 8px;
+        line-height: 22px;
+        vertical-align: middle;
+        display: inline-block;
+    }
+    .u-notice-icon {
+        font-size: 22px;
+        margin-right: 8px;
+        position: absolute;
+        top: 17px;
+        left: 16px;
+    }
+    .u-notoce-desc {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .u-notice-close {
+        position: absolute;
+        right: 8px;
+        top: 13px;
+        outline: none;
+        cursor: pointer;
+        // color: var(--kui-color-font);
+        @include color("color-regular");
+        font-size: 20px;
+        padding: 3px;
+        display: block;
+        border-radius: $radius;
+        &:hover {
+            // background-color: var(--kui-color-gray-80);
+            @include background-color("gray-80");
+        }
+    }
+    .u-notice-info .u-notice-icon {
+        // color: var(--kui-color-main);
+        @include color("primary");
+        // color:red;
+    }
+    .u-notice-error .u-notice-icon {
+        // color: var(--kui-color-danger);
+        @include color("danger");
+    }
+    .u-notice-success .u-notice-icon {
+        // color: var(--kui-color-success);
+        @include color("success");
+    }
+    .u-notice-warning .u-notice-icon {
+        // color: var(--kui-color-warning);
+        @include color("warning");
+    }
+}
+
+@keyframes noticeIn {
+    from {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes noticeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: scaleY(0.5);
+    }
+}
+
+.u-notice-slide-enter-active {
+    animation: noticeIn 0.3s ease;
+}
+
+.u-notice-slide-leave-active {
+    animation: noticeOut 0.3s ease;
+}

@@ -1,0 +1,211 @@
+.u-tabs {
+  overflow: hidden;
+  .u-tabs-bar {
+    @include border-bottom(1px, solid, "border-base");
+    margin: 0 0 16px;
+    display: flex;
+    align-items: center;
+    .u-tabs-tab-btn-next,
+    .u-tabs-tab-btn-prev {
+      cursor: pointer;
+      text-align: center;
+      font-size: 20px;
+      padding: 6px 5px 0;
+      // color: var(--kui-color-icon);
+      @include color("icon");
+    }
+    .u-tabs-tab-btn-next-disabed,
+    .u-tabs-tab-btn-prev-disabed {
+      // color: var(--kui-color-disable-color);
+      @include color("disable-color");
+      cursor: not-allowed;
+    }
+    // .u-tabs-extra {}
+    .u-tabs-nav-container {
+      flex: 1;
+      width: 0; // 麻痹，我感觉这是个bug
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      font-size: 14px;
+      margin-bottom: -1px;
+      .u-tabs-nav-wrap {
+        overflow: hidden;
+        flex: 1;
+        width: 0;
+      }
+      .u-tabs-nav {
+        display: inline-block;
+        transition: transform 0.3s;
+        white-space: nowrap;
+      }
+    }
+    .u-tabs-nav-container-scroll {
+      padding: 0;
+      .u-tabs-nav-scroll {
+        transition: transform 0.3s;
+      }
+    }
+    .u-tabs-tab {
+      height: 100%;
+      margin: 0 32px 0 0;
+      padding: 10px 0 10px;
+      font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.3s;
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+      @include color("color-regular");
+      // color: var(--kui-color-font);
+      display: inline-flex;
+      align-items: center;
+      .u-icon {
+        margin-right: 8px;
+      }
+      .u-tabs-close {
+        margin: 0 -5px 0 0;
+        width: 16px;
+        text-align: center;
+        @include color("icon");
+        // color: var(--kui-color-icon);
+        &:hover {
+          @include color("danger");
+          // color: var(--kui-color-danger);
+        }
+      }
+      &:last-child {
+        margin: 0 2px 0 0;
+      }
+      &:hover {
+        @include color("primary");
+        // color: var(--kui-color-main);
+      }
+    }
+    .u-tabs-tab-active {
+      // color: var(--kui-color-main);
+      @include color("primary");
+      font-weight: bold;
+    }
+    .u-tabs-tab-disabled {
+      // color: var(--kui-color-disable-color);
+      @include color("disable-color");
+      cursor: not-allowed;
+      &:hover {
+        @include color("disable-color");
+        // color: var(--kui-color-disable-color);
+      }
+    }
+    .u-tabs-inu-bar {
+      position: absolute;
+      height: 2px;
+      @include background("primary");
+      // background: var(--kui-color-main);
+      bottom: 0;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+  .u-tabs-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    transition: margin-left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    will-change: margin-left;
+    .u-tabs-tabpane {
+      flex-shrink: 0;
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}
+
+.u-tabs-centered {
+  .u-tabs-bar .u-tabs-nav-container .u-tabs-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.u-tabs-animated {
+  .u-tabs-bar .u-tabs-tab-active::after {
+    display: none;
+  }
+  .u-tabs-content {
+    .u-tabs-tabpane {
+      float: left;
+      transition: opacity 0.45s;
+    }
+  }
+}
+
+.u-tabs-card {
+  .u-tabs-bar {
+    .u-tabs-extra {
+    }
+    .u-tabs-tab {
+      margin-right: 2px;
+      border: 1px solid;
+      @include border(1px, solid, "border-base");
+      @include background("background-tertiary");
+      // background: var(--kui-color-back);
+      border-bottom-color: transparent;
+      padding: 8px 16px;
+    }
+    .u-tabs-tab-active {
+      @include background("background-tertiary");
+      // background: var(--kui-color-back);
+      border-bottom-color: transparent;
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .u-tabs-content {
+    display: block;
+    .u-tabs-tabpane:not(.u-tabs-tabpane-active) {
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+.u-tabs-sample {
+  // background: #fff;
+  .u-tabs-bar {
+    margin: 0;
+    border: none;
+    .u-tabs-tab {
+      margin: 0;
+      padding: 10px 16px;
+    }
+    .u-tabs-tab-active {
+      @include background("background-tertiary");
+      // background: var(--kui-color-back);
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .u-tabs-content {
+    display: block;
+    .u-tabs-tabpane {
+      padding: 16px;
+      // background: #fff;
+      @include background("background-tertiary");
+      // background: var(--kui-color-back);
+      box-sizing: border-box;
+    }
+    .u-tabs-tabpane:not(.u-tabs-tabpane-active) {
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transition: none;
+    }
+  }
+}

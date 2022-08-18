@@ -1,0 +1,60 @@
+.u-backtop {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 10;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    border-radius: $radius;
+    &-content {
+        @include background-color("background-four");
+        opacity: 0.7;
+        transition: opacity 0.3s ease-in-out;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        // color: #fff;
+        @include color("primary");
+        &:hover {
+            opacity: 1;
+        }
+        .u-icon {
+            margin-top: 50%;
+            transform: translateY(-50%);
+            @include color("primary");
+        }
+    }
+}
+
+@keyframes u-backtop-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes u-backtop-fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.u-backtop-fade-enter-active {
+    animation: u-backtop-fade-in 0.4s;
+}
+
+.u-backtop-fade-leave-active {
+    animation: u-backtop-fade-out 0.4s;
+}

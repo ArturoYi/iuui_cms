@@ -1,0 +1,96 @@
+.u-divider {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    // color: black;
+    @include color("color-secondary");
+    font-size: 14px;
+    line-height: 1.5;
+    list-style: none;
+    // background-color: black;
+    @include background-color("color-secondary");
+    &-dashed {
+        background: none;
+        @include background-color("color-secondary");
+        border-width: 1px 0 0;
+    }
+
+    &,
+    &-vertical {
+        position: relative;
+        top: -0.06em;
+        display: inline-block;
+        width: 1px;
+        height: 0.9em;
+        margin: 0 8px;
+        vertical-align: middle;
+    }
+
+    .u-divider-inner-text {
+        display: inline-block;
+        padding: 0 10px;
+        @include color("color-secondary");
+    }
+
+    &-dashed {
+        background: none;
+        @include background-color("color-secondary");
+        border-width: 1px 0 0;
+    }
+
+    &-vertical {
+        .u-divider-dashed {
+            border-width: 0 0 0 1px;
+        }
+    }
+
+    &-horizontal {
+        display: block;
+        clear: both;
+        width: 100%;
+        min-width: 100%;
+        height: 1px;
+        margin: 24px 0;
+        &.u-divider-width-text-center,
+        &.u-divider-width-text-left,
+        &.u-divider-width-text-right {
+            display: table;
+            margin: 16px 0;
+            @include color("color-secondary");
+            font-weight: 500;
+            font-size: 16px;
+            white-space: nowrap;
+            text-align: center;
+            background: transparent;
+
+            &::after,
+            &::before {
+                // position: relative;
+                top: 50%;
+                display: table-cell;
+                width: 50%;
+                // border-top: 1px solid var(--kui-color-border);
+                @include border-top(1px, solid, "color-secondary");
+                // @include background-color("divider-background");
+                transform: translateY(50%);
+                content: "";
+            }
+        }
+
+        &.u-divider-width-text-left::after,
+        &.u-divider-width-text-right::before {
+            top: 50%;
+            width: 95%;
+        }
+
+        &.u-divider-width-text-right::after {
+            top: 50%;
+            width: 5%;
+        }
+
+        &.u-divider-width-text-left::before {
+            top: 50%;
+            width: 5%;
+        }
+    }
+}

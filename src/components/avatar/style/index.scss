@@ -1,0 +1,65 @@
+.u-avatar {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    //   background-color: var(--kui-color-gray-30);
+    @include background-color("gray-30");
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    position: relative;
+    zoom: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    & > img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+    &.u-avatar-icon {
+        font-size: 18px;
+    }
+}
+
+.u-avatar-lg {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    &.u-avatar-icon {
+        font-size: 24px;
+    }
+}
+
+.u-avatar-sm {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    &.u-avatar-icon {
+        font-size: 14px;
+    }
+}
+
+.u-avatar-square {
+    border-radius: 4px;
+}
+
+.u-avatar-image {
+    background-color: transparent;
+}
+
+.u-avatar-string {
+    position: absolute;
+    left: 50%;
+    transform-origin: 0 center;
+}

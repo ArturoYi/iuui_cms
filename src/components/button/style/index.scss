@@ -1,0 +1,269 @@
+.u-btn {
+  font-size: 14px;
+  height: 32px;
+  line-height: 30px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  border-radius: $radius;
+  display: inline-block;
+  vertical-align: middle; // transition: opacity .2s ease-in-out;
+  user-select: none;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: transparent;
+  @include border(1px, solid, "border-base");
+  &:focus,
+  &:hover {
+    z-index: 1;
+    @include border(1px, solid, "primary");
+    @include color("primary");
+  }
+  & > .u-icon + span,
+  span + .u-icon {
+    margin-left: 4px;
+  }
+  .u-icon {
+    font-size: 16px;
+    vertical-align: middle;
+    margin-top: -2px;
+  }
+  &.u-btn-light {
+    @include background-color("gray-80");
+    @include border(1px, none, "gray-80");
+    border: none;
+  }
+  // &.u-btn-solid {
+  //   // background: 0 0;這裡背景設置會出現權重問題，所以下放到每個button中
+  //   @include font-color("font-color");
+  //   @include border(1px, solid, "border-base");
+  //   &:focus,
+  //   &:hover {
+  //     @include border(1px, solid, "border-base");
+  //     @include color("primary");
+  //   }
+  // }
+  &.u-btn-normal {
+    // background: 0 0;
+    @include border(1px, none, "gray-80");
+    border: none;
+    &:hover {
+      @include background-color("background-base");
+    }
+  }
+  &.u-btn-dashed {
+    border-style: dashed;
+    @include color("color-regular");
+    @include border(1px, dashed, "border-base");
+    &:focus,
+    &:hover {
+      @include color("primary-30");
+      @include background("primary-90");
+      @include border(1px, dashed, "primary-30");
+    }
+    &.u-btn-solid {
+      @include color("color-regular");
+      @include border(1px, dashed, "border-base");
+      &:focus,
+      &:hover {
+        @include color("primary-30");
+        @include background("transparent");
+        @include border(1px, dashed, "primary-30");
+      }
+    }
+  }
+}
+
+.u-btn-block {
+  width: 100%;
+}
+
+.u-btn-dashed {
+  border-style: dashed;
+}
+
+.u-btn-loading {
+  opacity: 0.8;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.u-btn-sm {
+  height: 24px;
+  line-height: 22px;
+  font-size: 12px;
+  padding: 0 8px;
+  [class^="u-ion"] {
+    font-size: 12px;
+  }
+}
+
+.u-btn-lg {
+  height: 40px;
+  line-height: 38px;
+  font-size: 14px;
+  padding: 0 15px;
+  .u-icon {
+    font-size: 20px;
+  }
+}
+
+.u-btn-circle {
+  border-radius: 30px;
+}
+$button: "primary", "success", "danger", "warning", "gray";
+@for $i from 1 through length($button) {
+  $item: nth($button, $i); //获取数组$i对应的下标值 即颜色值
+  .u-btn-#{$item} {
+    @include color("color-white");
+    @include background(#{$item});
+    @include border(1px, solid, #{$item});
+    &:hover {
+      opacity: 0.8;
+      zoom: 0%;
+      // @include color("color-primary");
+      @include color("color-white");
+      @include border(1px, solid, #{$item});
+    }
+    &:focus {
+      @include border(1px, solid, #{$item});
+      // @include color("color-primary");
+      @include color("color-white");
+    }
+    &.u-btn-light {
+      @include background-color("gray-80");
+      @include color(#{$item});
+      @include border(1px, none, "gray-80");
+      border: none;
+    }
+    &.u-btn-solid {
+      background: 0 0;
+      @include color(#{$item});
+      @include border(1px, solid, #{$item});
+      &:focus {
+        @include border(1px, solid, #{$item});
+        @include color(#{$item});
+      }
+    }
+    &.u-btn-normal {
+      background: 0 0;
+      @include border(1px, none, "gray-80");
+      border: none;
+      @include color(#{$item});
+    }
+  }
+}
+
+.u-btn-group {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  .u-btn {
+    margin-left: -1px;
+    position: relative;
+    margin-right: 0;
+    border-radius: 0;
+    &:first-child {
+      border-radius: $radius 0 0 $radius;
+    }
+    &:last-child {
+      border-radius: 0 $radius $radius 0;
+    }
+  }
+}
+
+.u-btn-icon-only {
+  padding: 0;
+  height: 32px;
+  width: 32px;
+}
+
+.u-btn-icon-only.u-btn-lg {
+  padding: 0;
+  height: 40px;
+  width: 40px;
+}
+
+.u-btn-icon-only.u-btn-sm {
+  padding: 0;
+  height: 24px;
+  width: 24px;
+  min-width: 24px;
+}
+
+.u-btn-group-sm {
+  .u-btn {
+    height: 24px;
+    line-height: 22px;
+    font-size: 12px;
+    padding: 0 8px;
+  }
+}
+
+.u-btn-group-lg {
+  .u-btn {
+    height: 40px;
+    line-height: 38px;
+    font-size: 14px;
+    padding: 0 15px;
+  }
+}
+
+.u-btn-group-circle {
+  .u-btn {
+    &:first-child {
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+    }
+    &:last-child {
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+  }
+}
+
+.u-btn[disabled="disabled"] {
+  &,
+  &:hover,
+  &:active,
+  &:active,
+  &:focus {
+    opacity: 0.9;
+    cursor: not-allowed;
+    @include color("disable-color");
+    @include background("disable-background");
+    @include border(1px, solid, "disable-border");
+  }
+  &.u-btn-normal {
+    background: 0 0;
+  }
+}
+.u-btn-link {
+  background: none;
+  @include border(1px, none, "gray-60");
+  border: none;
+  @include color("primary");
+  &.u-btn-solid {
+    @include border(1px, none, "gray-60");
+    border: none;
+  }
+  &:focus,
+  &:hover {
+    @include border(1px, none, "gray-60");
+    border: none;
+    opacity: 0.8;
+  }
+  &:disabled {
+    &,
+    &:hover,
+    &:active,
+    &:active,
+    &:focus {
+      background: 0 0;
+    }
+  }
+}

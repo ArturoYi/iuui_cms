@@ -1,0 +1,137 @@
+.u-page {
+    @include color("color-primary");
+    // color: var(--kui-color-font);
+    font-size: 14px;
+    padding: 20px 0;
+    user-select: none;
+    .u-pager {
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        .u-pager-item {
+            background: transparent;
+            @include color("color-primary");
+            // color: var(--kui-color-font);
+            min-width: 30px;
+            height: 30px;
+            line-height: 1;
+            border-radius: $radius;
+            margin: 0 8px;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: content-box;
+            border: 1px solid;
+            @include border(1px, solid, "border-base");
+            transition: all 0.2s ease-in-out 0s;
+            margin-left: -1px;
+            font-size: 14px;
+            cursor: pointer;
+            position: relative;
+            vertical-align: middle;
+            &:hover {
+                @include border(1px, solid, "primary");
+                // border-color: var(--kui-color-main);
+                // color: var(--kui-color-main);
+                @include color("primary");
+                .u-icon {
+                    @include color("primary");
+                    // color: var(--kui-color-main);
+                }
+            }
+            &.u-pager-item-active {
+                border: 1px solid;
+                @include border(1px, solid, "primary");
+                @include color("primary");
+            }
+            span {
+                margin: 0 5px;
+            }
+            .u-icon {
+                @include color("color-primary");
+                // position: absolute;
+                // top: 50%;
+                // left: 50%;
+                // transform: translateX(-50%) translateY(-50%);
+            }
+        }
+        .u-pager-more {
+            font-size: 20px;
+            border-color: transparent;
+            &:hover {
+                border-color: transparent;
+            }
+        }
+        .u-pager-prev {
+            .u-icon {
+                transform: rotate(-90deg);
+                transform-origin: center;
+            }
+        }
+        .u-pager-next {
+            .u-icon {
+                transform-origin: center;
+                transform: rotate(90deg);
+            }
+        }
+        .u-pager-item-disabled {
+            @include border-color("disable-border");
+            cursor: not-allowed;
+            .u-icon {
+                @include color("disable-color");
+            }
+            &:hover {
+                // border-color: var(--kui-color-disable-border);
+                @include border-color("disable-border");
+                .u-icon {
+                    @include color("disable-color");
+                }
+            }
+        }
+        .u-pager-more {
+            // color: var(--kui-color-gray);
+            @include color("gray");
+        }
+    }
+    .u-page-sizer {
+        display: inline-block;
+        // width: 90px;
+    }
+    .u-page-number {
+        margin: 0 4px;
+        display: inline-block;
+        font-size: 14px;
+    }
+    .u-page-options {
+        display: inline-block;
+        font-size: 14px;
+        span {
+            padding: 0 5px;
+        }
+        .u-page-options-elevator {
+            width: 50px;
+            font-size: 14px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .u-page-options-action {
+            vertical-align: middle;
+        }
+    }
+}
+
+.u-page-sm {
+    .u-pager .u-pager-item {
+        height: 22px;
+        font-size: 14px;
+        // line-height: 22px;
+        min-width: 22px;
+    }
+    .u-page-sizer {
+        width: 86px;
+    }
+    .u-page-number {
+        font-size: 14px;
+    }
+}

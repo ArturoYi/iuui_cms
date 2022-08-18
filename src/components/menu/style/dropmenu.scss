@@ -1,0 +1,102 @@
+.u-dropdown-menu {
+  display: block;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-size: 14px;
+  position: relative;
+  zoom: 1;
+  // background: var(--kui-color-control-10);
+  @include background("background-base");
+  list-style: none;
+  padding: $radius 0;
+  border-radius: $radius;
+  min-width: 50px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  // color: var(--kui-color-font);
+  @include color("font-color");
+  .u-menu-item-divider {
+    height: 1px;
+    margin: 4px 0;
+    overflow: hidden;
+    line-height: 0;
+    // background-color: var(--kui-color-border);
+    @include background-color("background-base");
+  }
+  .u-dropdown-menu-icon-temp {
+    // width: 20px;
+    // height: 20px;
+    // display: inline-block;
+    // margin-right: 8px;
+    display: none;
+  }
+  .u-dropdown-menu-item,
+  .u-dropdown-menu-submenu .u-dropdown-menu-submenu-title {
+    line-height: 1;
+    font-size: 14px;
+    list-style: none;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: $radius;
+    margin: 8px;
+    a {
+      // color: var(--kui-color-font);
+      @include color("color-primary");
+      display: block;
+      // margin: -5px -12px -5px -24px;
+      // padding: 5px 12px 5px 24px;
+    }
+    &.u-dropdown-menu-item-active {
+      // background-color: var(--kui-color-hover);
+      @include background-color("background-base");
+    }
+    .u-dropdown-menu-item-icon {
+      font-size: 16px;
+      margin-right: 8px;
+    }
+  }
+  .u-dropdown-menu-submenu-active {
+    // background-color: var(--kui-color-hover);
+    @include background-color("background-base");
+  }
+  .u-dropdown-menu-item-divider {
+    height: 1px;
+    margin: 2px 0;
+    overflow: hidden;
+    line-height: 0;
+    // background-color: var(--kui-color-border);
+    @include background-color("background-tertiary");
+  }
+  .u-dropdown-menu-item-disabled,
+  .u-dropdown-menu-submenu-disabled {
+    // color: var(--kui-color-disable-color);
+    @include color("disable-color");
+    cursor: not-allowed;
+  }
+  .u-dropdown-menu-submenu-popup {
+    position: absolute;
+    top: 0;
+    box-sizing: content-box;
+    position: absolute;
+    z-index: 1001;
+    min-width: 100px;
+    border-radius: $radius;
+    padding-left: 5px;
+    left: 100%;
+  }
+  .u-dropdown-menu-submenu {
+    // padding-right: 36px;
+    position: relative;
+    .u-dropdown-menu-submenu-arrow {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+    }
+  }
+}

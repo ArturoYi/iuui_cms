@@ -1,0 +1,22 @@
+.u-empty {
+    text-align: center;
+    @include color("gray-30");
+    // color: var(--kui-color-gray-60);
+    font-size: 13px;
+    // cursor: not-allowed;
+    .u-empty-icon {
+        font-size: 40px;
+        padding: 10px 0;
+        path {
+            stroke-width: 15px !important;
+        }
+    }
+    .u-empty-description {
+        padding-bottom: 10px;
+        line-height: 1.5;
+    }
+    .u-empty-footer {
+        margin-top: 20px;
+        text-align: center;
+    }
+}

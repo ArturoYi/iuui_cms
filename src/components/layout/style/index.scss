@@ -1,0 +1,35 @@
+.u-layout {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    .u-layout-header {
+        box-sizing: border-box;
+    }
+
+    .u-layout-content {
+        flex: 1;
+        overflow: hidden;
+    }
+
+    .u-layout-sider {
+        position: relative;
+        min-width: 0;
+        // transition: all 0.2s;
+        // background: #646d82;
+    }
+
+    .u-layout-footer {
+        padding: 24px 50px;
+        font-size: 14px;
+    }
+}
+
+.u-layout-has-sider {
+    flex-direction: row;
+    width: 100%;
+
+    .u-layout {
+        flex: 1;
+    }
+}

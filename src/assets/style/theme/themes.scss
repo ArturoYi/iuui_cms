@@ -1,0 +1,166 @@
+$themes: (
+    "light": (
+        //主色
+        "primary": #3a95ff,
+        "primary-10": fade-out(#3a95ff, 0.1),
+        "primary-30": fade-out(#3a95ff, 0.3),
+        "primary-60": fade-out(#3a95ff, 0.6),
+        "primary-80": fade-out(#3a95ff, 0.8),
+        "primary-90": fade-out(#3a95ff, 0.9),
+        "success": #00bb5d,
+        "success-10": fade-out(#00bb5d, 0.1),
+        "success-30": fade-out(#00bb5d, 0.3),
+        "success-60": fade-out(#00bb5d, 0.6),
+        "success-80": fade-out(#00bb5d, 0.8),
+        "success-90": fade-out(#00bb5d, 0.9),
+        "danger": #ff3300,
+        "danger-10": fade-out(#ff3300, 0.1),
+        "danger-30": fade-out(#ff3300, 0.3),
+        "danger-60": fade-out(#ff3300, 0.6),
+        "danger-80": fade-out(#ff3300, 0.8),
+        "danger-90": fade-out(#ff3300, 0.9),
+        "warning": #ffa500,
+        "warning-10": fade-out(#ffa500, 0.1),
+        "warning-30": fade-out(#ffa500, 0.3),
+        "warning-60": fade-out(#ffa500, 0.6),
+        "warning-80": fade-out(#ffa500, 0.8),
+        "warning-90": fade-out(#ffa500, 0.9),
+        "gray": #969696,
+        "gray-10": fade-out(#969696, 0.1),
+        "gray-30": fade-out(#969696, 0.3),
+        "gray-60": fade-out(#969696, 0.6),
+        "gray-80": fade-out(#969696, 0.8),
+        "gray-90": fade-out(#969696, 0.9),
+        //內置顏色值
+        "pink": lighten(purple, 45%),
+        "pink-30": fade-out(#800080, 0.3),
+        "pink-60": fade-out(#800080, 0.6),
+        "pink-80": fade-out(#800080, 0.8),
+        "pink-90": fade-out(#800080, 0.9),
+        //禁用
+        "disable-background": #d4d5d8,
+        "disable-border": #9c9c9c,
+        "disable-color": #9c9c9c,
+        /*字體色-----------------------------------------------------------------------------------------------字體色*/
+            //1.主要文字色
+        "color-primary": #303133,
+        //2.常規文字色
+        "color-regular": #606266,
+        //3.佔位文字色
+        "color-secondary": #909399,
+        //4.次要文字色
+        "color-placeholder": #c0c4cc,
+        /*邊框色-----------------------------------------------------------------------------------------------邊框色*/
+            //1.一級邊框
+        "border-base": #dcdfe6,
+        //2.二級邊框
+        "border-light": #e4e7ed,
+        //3.三級邊框
+        "border-lighter": #ebeef5,
+        //4.四級邊框
+        "border-extra-light": #f2f6fc,
+        /*背景色----------------------------------------------------------------------------------------------背景色*/
+            "transparent": fade-out(#ffffff00, 1),
+        //1.基礎白色
+        "color-white": #ffffff,
+        //2.基礎黑色
+        "color-black": #000000,
+        //3.一級背景色
+        "background-base": #f5f5f5,
+        //4.二級背景色
+        "background-second": #eeeeee,
+        //5.三級背景色
+        "background-tertiary": #d8d8d8,
+        //6.四級背景色
+        "background-four": #c0c0c0,
+        //6.四級背景色
+        "background-loading": fade-out(#f5f5f5, 0.2),
+        "back": #dbdbdb88,
+        // 圖標色
+        "icon": fade-out(#3a3a3a, 0.6),
+        //選擇
+    ),
+    //
+    "dark":
+        (
+            //主色
+            "primary": #3a95ff,
+            "primary-10": fade-out(#3a95ff, 0.1),
+            "primary-30": fade-out(#3a95ff, 0.3),
+            "primary-60": fade-out(#3a95ff, 0.6),
+            "primary-80": fade-out(#3a95ff, 0.8),
+            "primary-90": fade-out(#3a95ff, 0.9),
+            "success": #00bb5d,
+            "success-10": fade-out(#00bb5d, 0.1),
+            "success-30": fade-out(#00bb5d, 0.3),
+            "success-60": fade-out(#00bb5d, 0.6),
+            "success-80": fade-out(#00bb5d, 0.8),
+            "success-90": fade-out(#00bb5d, 0.9),
+            "danger": #ff3300,
+            "danger-10": fade-out(#ff3300, 0.1),
+            "danger-30": fade-out(#ff3300, 0.3),
+            "danger-60": fade-out(#ff3300, 0.6),
+            "danger-80": fade-out(#ff3300, 0.8),
+            "danger-90": fade-out(#ff3300, 0.9),
+            "warning": #ffa500,
+            "warning-10": fade-out(#ffa500, 0.1),
+            "warning-30": fade-out(#ffa500, 0.3),
+            "warning-60": fade-out(#ffa500, 0.6),
+            "warning-80": fade-out(#ffa500, 0.8),
+            "warning-90": fade-out(#ffa500, 0.9),
+            "gray": #969696,
+            "gray-10": fade-out(#969696, 0.1),
+            "gray-30": fade-out(#969696, 0.3),
+            "gray-60": fade-out(#969696, 0.6),
+            "gray-80": fade-out(#969696, 0.8),
+            "gray-90": fade-out(#969696, 0.9),
+            //內置顏色值
+            "pink": lighten(purple, 45%),
+            "pink-30": fade-out(#800080, 0.3),
+            "pink-60": fade-out(#800080, 0.6),
+            "pink-80": fade-out(#800080, 0.8),
+            "pink-90": fade-out(#800080, 0.9),
+            //禁用
+            "disable-background": #b6b6b6,
+            "disable-border": #919191,
+            "disable-color": #f1f1f1,
+            /*字體色-----------------------------------------------------------------------------------------------字體色*/
+                //1.主要文字色
+            "color-primary": #c6c7ca,
+            //2.常規文字色
+            "color-regular": #aaaaaa,
+            //3.佔位文字色
+            "color-secondary": #7e8186,
+            //4.次要文字色
+            "color-placeholder": #303133,
+            /*邊框色-----------------------------------------------------------------------------------------------邊框色*/
+                //1.一級邊框
+            "border-base": #666666,
+            //2.二級邊框
+            "border-light": #bdbdbd,
+            //3.三級邊框
+            "border-lighter": #979797,
+            //4.四級邊框
+            "border-extra-light": #b3b3b3,
+            /*背景色----------------------------------------------------------------------------------------------背景色*/
+                "transparent": fade-out(#ffffff00, 1),
+            //1.基礎白色
+            "color-white": #ffffff,
+            //2.基礎黑色
+            "color-black": #000000,
+            //3.一級背景色
+            "background-base": #222738,
+            //4.二級背景色
+            "background-second": #2c3e50,
+            //5.三級背景色
+            "background-tertiary": #707070,
+            //6.四級背景色
+            "background-four": #666666,
+            //6.四級背景色
+            "background-loading": fade-out(#1f1f1f, 0.2),
+            "back": #2c3e50,
+            // 圖標色
+            "icon": fade-out(#cacaca, 0.6),
+            //選擇
+        ),
+);

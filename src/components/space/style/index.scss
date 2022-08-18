@@ -1,0 +1,38 @@
+.u-space {
+    display: inline-flex;
+    gap: 8px;
+  }
+  
+  .u-space-md {
+    display: inline-flex;
+    gap: 16px;
+  }
+  
+  .u-space-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .u-space-lg {
+    display: inline-flex;
+    gap: 24px;
+  }
+  
+  .u-space-align-start {
+    align-items: flex-start;
+  }
+  
+  .u-space-align-end {
+    align-items: flex-end;
+  }
+  
+  .u-space-align-center {
+    align-items: center;
+  }
+  
+  .u-space-align-baseline {
+    align-items: baseline;
+  }
+  
+  .u-space-vertical {
+    flex-direction: column;
+  }

@@ -1,0 +1,195 @@
+.u-skeleton {
+  display: table;
+  width: 100%;
+  .u-skeleton-header {
+    display: table-cell;
+    padding-right: 16px;
+    vertical-align: top;
+  }
+  .u-skeleton-content {
+    display: table-cell;
+    vertical-align: top;
+    width: 100%;
+    .u-skeleton-title {
+      width: 100%;
+      height: 16px;
+      margin-top: 16px;
+      // background: var(--kui-color-skeleton);
+      @include background("background-tertiary");
+      border-radius: 4px;
+    }
+    .u-skeleton-paragraph {
+      margin-top: 20px;
+      list-style: none;
+      & > li {
+        width: 100%;
+        height: 16px;
+        list-style: none;
+        // background: var(--kui-color-skeleton);
+        @include background("background-tertiary");
+        border-radius: 4px;
+        &:last-child {
+          width: 61%;
+        }
+      }
+      & > li + li {
+        margin-top: 16px;
+      }
+    }
+  }
+  &.u-skeleton-animated {
+    .u-skeleton-paragraph > li,
+    .u-skeleton-avatar,
+    .u-skeleton-title,
+    .u-skeleton-btn,
+    .u-skeleton-image,
+    .u-skeleton-text {
+      background: linear-gradient(90deg, $background-tertiary 25%, $background-four 37%, $background-tertiary 63%);
+      background-size: 400% 100%;
+      -webkit-animation: u-skeleton-loading 1.4s ease infinite;
+      animation: u-skeleton-loading 1.4s ease infinite;
+    }
+  }
+  &.u-skeleton-block {
+    width: 100%;
+    .u-skeleton-btn {
+      width: 100%;
+    }
+  }
+  //text
+  .u-skeleton-text {
+    display: inline-block;
+    vertical-align: top;
+    background: $background-tertiary;
+    // @include background("background-tertiary");
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+  }
+  .u-skeleton-text-lg {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+  }
+  .u-skeleton-text-sm {
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+  }
+  //btn
+  .u-skeleton-btn {
+    display: inline-block;
+    vertical-align: top;
+    background: $background-tertiary;
+    // @include background("background-tertiary");
+    border-radius: $radius;
+    width: 64px;
+    min-width: 64px;
+    height: 32px;
+    line-height: 32px;
+    &.u-skeleton-btn-round {
+      border-radius: 32px;
+    }
+    &.u-skeleton-btn-circle {
+      border-radius: 50%;
+      width: 32px;
+      min-width: 32px;
+    }
+  }
+  .u-skeleton-btn-sm {
+    width: 48px;
+    min-width: 48px;
+    height: 24px;
+    line-height: 24px;
+    &.u-skeleton-btn-round {
+      border-radius: 24px;
+    }
+    &.u-skeleton-btn-circle {
+      border-radius: 50%;
+      width: 24px;
+      min-width: 24px;
+    }
+  }
+  .u-skeleton-btn-lg {
+    width: 80px;
+    min-width: 80px;
+    height: 40px;
+    line-height: 40px;
+    &.u-skeleton-btn-round {
+      border-radius: 40px;
+    }
+    &.u-skeleton-btn-circle {
+      border-radius: 50%;
+      width: 40px;
+      min-width: 40px;
+    }
+  }
+  //avatar
+  .u-skeleton-avatar {
+    display: inline-block;
+    vertical-align: top;
+    background: $background-tertiary;
+    // @include background("background-tertiary");
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+  }
+  .u-skeleton-avatar-lg {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .u-skeleton-avatar-sm {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+  }
+  .u-skeleton-avatar-circle {
+    border-radius: 50%;
+  }
+  //image
+  .u-skeleton-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    background: $background-tertiary;
+    // @include background("background-tertiary");
+    min-width: 96px;
+    min-height: 96px;
+    height: 100%;
+    width: 100%;
+    // line-height: 96px;
+    font-size: 30px;
+    // color: var(--kui-color-icon);
+    @include color("icon");
+  }
+}
+
+.u-skeleton-ele {
+  display: inline-block;
+  width: auto;
+  //   &.u-skeleton-block {
+  //     width: 100%;
+  //     .u-skeleton-btn {
+  //       width: 100%;
+  //     }
+  //   }
+}
+@keyframes u-skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  to {
+    background-position: 0 50%;
+  }
+}
+
+@-webkit-keyframes u-skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  to {
+    background-position: 0 50%;
+  }
+}

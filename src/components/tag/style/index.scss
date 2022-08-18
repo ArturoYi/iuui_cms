@@ -1,0 +1,96 @@
+.u-tag {
+    display: inline-block;
+    line-height: 20px;
+    height: auto;
+    padding: 0 7px;
+    // border: 1px solid var(--kui-color-border);
+    @include border(1px, solid, "border-base");
+    // background-color: var(--kui-color-back);
+    @include background-color("background-second");
+    font-size: 12px;
+    border-radius: $radius;
+    box-sizing: border-box;
+    white-space: nowrap;
+    margin-right: 8px;
+    vertical-align: middle;
+    cursor: pointer;
+    // color: var(--kui-color-font);
+    @include color("color-secondary");
+    .u-tag-close {
+        font-size: 16px;
+        margin-left: 4px;
+        vertical-align: -4px;
+        &:hover {
+            // color: var(--kui-color-danger);
+            @include color("danger");
+        }
+    }
+    &-pink {
+        @include color("pink-30");
+        @include border(1px, solid, "pink-60");
+        @include background-color("pink-90");
+    }
+    &-primary {
+        @include color("primary-30");
+        @include border(1px, solid, "primary-60");
+        @include background-color("primary-90");
+    }
+    &-success {
+        @include color("success-30");
+        @include border(1px, solid, "success-60");
+        @include background-color("success-90");
+    }
+    &-danger {
+        @include color("danger-30");
+        @include border(1px, solid, "danger-60");
+        @include background-color("danger-90");
+    }
+    &-warning {
+        @include color("warning-30");
+        @include border(1px, solid, "warning-60");
+        @include background-color("warning-90");
+    }
+    &-gray {
+        @include color("gray-30");
+        @include border(1px, solid, "gray-60");
+        @include background-color("gray-90");
+    }
+}
+
+.u-tag-has-color {
+    color: #fff;
+    border-color: transparent;
+    .u-tag-close {
+        color: #fff;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0, 0);
+    }
+}
+
+.u-tag-enter-active {
+    animation: zoomIn 0.2s ease-out;
+}
+
+.u-tag-leave-active {
+    animation: zoomOut 0.2s ease-out;
+}

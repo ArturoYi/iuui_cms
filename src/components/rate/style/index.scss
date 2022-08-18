@@ -1,0 +1,47 @@
+.u-rate {
+    display: inline-block;
+    font-size: 20px;
+    color: orange;
+    line-height: 1;
+    .u-star {
+        display: inline-block;
+        margin-right: 8px;
+        position: relative;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        .u-star-front {
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            height: 100%;
+            overflow: hidden;
+            width: 50%;
+            opacity: 0;
+        }
+        .u-star-back {
+            //   color: var(--kui-color-border);
+            @include color("border-color");
+        }
+    }
+    .u-star-checked {
+        transform: scale(1.1);
+    }
+    .u-star-half {
+        .u-star-front {
+            // color: orange;
+            opacity: 1;
+        }
+    }
+    .u-star-full {
+        .u-star-front {
+            // color: orange;
+            width: 100%;
+            opacity: 1;
+        }
+    }
+    .u-rate-score {
+        // color: orange;
+        font-size: 14px;
+    }
+}

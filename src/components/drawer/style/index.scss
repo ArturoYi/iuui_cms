@@ -1,0 +1,181 @@
+@import './animal.scss';
+.u-drawer {
+    position: fixed;
+    z-index: 1002;
+    .u-drawer-mask {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        @include background-color("gray-30");
+        // background-color: var(--kui-color-mask);
+        height: 100%;
+        width: 100%;
+        z-index: 1000; // animation: mmask .5s ease-in-out;
+        overflow: hidden;
+    }
+    .u-drawer-box {
+        position: absolute;
+        z-index: 1001;
+        outline: 0;
+        pointer-events: all;
+        width: 520px; // animation: fadeIn .5s ease-in-out;
+        // transition: transform .3s;
+    }
+    .u-drawer-content {
+        position: relative;
+        @include background-color("background-base");
+        border: 0;
+        background-clip: padding-box;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        .u-drawer-close {
+            position: absolute;
+            right: 16px;
+            cursor: pointer;
+            font-size: 20px;
+            @include color("color-primary");
+            line-height: 43px;
+            width: 43px;
+            right: 0;
+            text-align: center;
+            top: 0;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                @include color("danger-10");
+                // color: var(--kui-color-danger);
+                // transform: rotate(360deg);
+            }
+        }
+        .u-drawer-header {
+            @include border-bottom(1px,solid,"gray-80");
+            // border-bottom: 1px solid var(--kui-color-gray-80);
+            padding: 14px 35px 14px 16px;
+            line-height: 1;
+            font-size: 14px;
+            font-weight: 600;
+            @include color("color-primary");
+            // color: var(--kui-color-title);
+            user-select: none;
+            .u-drawer-header-inner {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 1.1;
+                font-size: 14px;
+            }
+        }
+    }
+    .u-drawer-body {
+        padding: 16px;
+        font-size: 14px;
+        line-height: 1.5;
+        // height: calc(100% - 43px);
+        // height: 100%;
+        flex: 1;
+        overflow: auto;
+        box-sizing: border-box;
+        @include color("color-primary");
+    }
+    .u-drawer-footer {
+        @include border-top(1px, solid, "border-base");
+        // border-top: 1px solid var(--kui-color-border);
+        padding: 10px 16px;
+        text-align: right;
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        .u-btn {
+            margin-left: 8px;
+        }
+    }
+}
+
+.u-drawer-has-footer {
+    .u-drawer-body {
+        // height: calc(100% - 43px);
+    }
+}
+
+.u-drawer-open {
+    &.u-drawer-left,
+    &.u-drawer-right {
+        width: 100%;
+    }
+    &.u-drawer-top,
+    &.u-drawer-bottom {
+        height: 100%;
+    }
+    &.u-drawer-bottom .u-drawer-box {
+        bottom: 0;
+    }
+}
+
+.u-drawer-right {
+    // width: 100%;
+    height: 100%;
+    right: 0;
+    .u-drawer-box {
+        top: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.u-drawer-left {
+    // width: 0%;
+    height: 100%;
+    left: 0;
+    .u-drawer-box {
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.u-drawer-top {
+    width: 100%;
+    // height: 0;
+    top: 0;
+    .u-drawer-box {
+        top: 0;
+        left: 0;
+        width: 100%;
+        // height: 0;
+    }
+}
+
+.u-drawer-bottom {
+    width: 100%;
+    // height: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    .u-drawer-box {
+        width: 100%;
+        // height: 0;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+.u-drawer-nobody {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    .u-drawer-masu-nobody {
+        position: absolute;
+        pointer-events: all;
+    }
+    &.u-drawer-bottom .u-drawer-box {
+        bottom: inherit;
+    }
+}
+
+.u-drawer-nomask {
+    pointer-events: none;
+}

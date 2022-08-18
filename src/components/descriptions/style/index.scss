@@ -1,0 +1,95 @@
+.u-descriptions {
+  .u-descriptions-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .u-descriptions-title {
+    flex: auto;
+    overflow: hidden;
+    // color: var(--kui-color-font);
+    @include color("color-primary");
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .u-descriptions-view {
+    width: 100%;
+    border-radius: 2px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      table-layout: auto;
+    }
+  }
+  .u-descriptions-row > .u-descripts-item {
+    padding-bottom: 16px;
+    .u-descriptions-item-label,
+    .u-descriptions-item-content {
+      display: inline-flex;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .u-descriptions-item-label {
+      &::after {
+        content: ":";
+        position: relative;
+        top: -0.5px;
+        margin: 0 8px 0 2px;
+      }
+    }
+  }
+}
+
+.u-descriptions-bordered {
+  .u-descriptions-item-label,
+  .u-descriptions-item-content {
+    padding: 16px 24px;
+    // border: 1px solid var(--kui-color-gray-80);
+    @include border(1px, solid, "border-base");
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .u-descriptions-item-label {
+    @include background("gray-90");
+    font-weight: 400;
+  }
+}
+
+// .u-descriptions-vertical {
+//   .u-descriptions-row > .u-descripts-item {
+//     padding-bottom: 0;
+//   }
+//   &.u-descriptions-bordered {
+//     .u-descriptions-item-label, .u-descriptions-item-content {
+//       border: none;
+//       background: none;
+//     }
+//   }
+// }
+.u-descriptions-middle {
+  .u-descriptions-row > .u-descripts-item {
+    padding-bottom: 12px;
+  }
+  &.u-descriptions-bordered {
+    .u-descriptions-item-label,
+    .u-descriptions-item-content {
+      padding: 12px 24px;
+    }
+  }
+}
+
+.u-descriptions-sm {
+  .u-descriptions-row > .u-descripts-item {
+    padding-bottom: 8px;
+  }
+  &.u-descriptions-bordered {
+    .u-descriptions-item-label,
+    .u-descriptions-item-content {
+      padding: 8px 16px;
+    }
+  }
+}

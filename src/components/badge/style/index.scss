@@ -1,0 +1,129 @@
+.u-badge {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+    &-count {
+        position: absolute;
+        transform: translate(50%, -50%);
+        transform-origin: 100% 0;
+        top: 0px;
+        right: 0;
+        height: 20px;
+        border-radius: 10px;
+        min-width: 20px;
+        background: #ed3f14;
+        color: #fff;
+        line-height: 20px;
+        text-align: center;
+        padding: 0 6px;
+        font-size: 12px;
+        white-space: nowrap;
+        z-index: 10;
+        //   box-shadow: 0 0 0 1px var(--kui-color-back);
+        @include box-shadow("", 0, 0, 1px, "border-base");
+        box-sizing: border-box;
+    }
+    &-mark {
+        display: inline-block;
+        border-radius: 10px;
+        min-width: 20px;
+        background: #ed3f14;
+        color: #fff;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        padding: 0 6px;
+        font-size: 12px;
+        box-sizing: border-box;
+        white-space: nowrap;
+        box-shadow: 0 0 0 2px #fff;
+        top: 0;
+        bottom: 0;
+    }
+    &-dot {
+        position: absolute;
+        // transform: translateX(-50%);
+        // transform-origin: 0 center;
+        // top: -4px;
+        // right: -8px;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
+        transform-origin: 100% 0;
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
+        // background: var(--kui-color-danger);
+        @include background("danger");
+        z-index: 10;
+        box-shadow: 0 0 0 1px #fff;
+    }
+    &-status-dot {
+        position: relative;
+        top: -1px;
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        vertical-align: middle;
+        border-radius: 50%;
+    }
+    &-status-text {
+        // color: var(--kui-color-font);
+        @include color("color-primary");
+        font-size: 14px;
+        margin-left: 8px;
+    }
+    &-status-success {
+        // background-color: var(--kui-color-success);
+        @include background-color("success");
+    }
+    &-status-error {
+        // background-color: var(--kui-color-danger);
+        @include background-color("danger");
+    }
+    &-status-warning {
+        // background-color: var(--kui-color-warning);
+        @include background-color("warning");
+    }
+    &-status-default {
+        background-color: #ddd;
+    }
+
+    // &-status-pink {
+    //     background-color: var(--kui-color-pink);
+    // }
+    &-status-red {
+        @include background-color("red");
+    }
+    &-status-yellow {
+        @include background-color("yellow");
+    }
+    &-status-orange {
+        @include background-color("orange");
+    }
+    &-status-cyan {
+        @include background-color("cyan");
+    }
+    &-status-green {
+        @include background-color("green");
+    }
+    &-status-blue {
+        @include background-color("blue");
+    }
+    &-status-purple {
+        @include background-color("purple");
+    }
+    &-status-geekblue {
+        @include background-color("geekblue");
+    }
+    &-status-magenta {
+        @include background-color("magenta");
+    }
+    &-status-volcano {
+        @include background-color("volcano ");
+    }
+    &-status-lime {
+        @include background-color("lime");
+    }
+}

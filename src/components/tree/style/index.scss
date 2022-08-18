@@ -1,0 +1,240 @@
+.u-tree {
+    .u-tree-item {
+        padding: 0 0 4px;
+        margin: 0;
+        list-style: none;
+        white-space: nowrap;
+        outline: 0;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        .u-checkbox-wrapper {
+            margin-right: 4px;
+        }
+    }
+    .u-tree-children {
+        margin: 0;
+        .u-tree-item-children {
+            margin: 0 0 0 12px;
+        }
+    }
+    .u-tree-commes {
+        display: inline-block;
+        width: 24px;
+        position: relative;
+        height: 24px;
+    }
+    .u-checkbox-wp {
+        margin: 0;
+    }
+    .u-tree-icon {
+        margin-right: 5px;
+        vertical-align: middle;
+        font-size: 14px;
+    }
+    .u-tree-title {
+        display: inline-block;
+        padding: 4px 4px;
+        // margin: 0 4px;
+        z-index: 0;
+        border-radius: 2px;
+        cursor: pointer;
+        // color: var(--kui-color-font);
+        @include color("color-primary");
+        line-height: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 13px;
+        // transition: all .2s ease-in-out;
+        &:hover {
+            // background: var(--kui-color-hover);
+            @include background("primary-30");
+            outline: none;
+        }
+    }
+    .u-tree-item-drop {
+        > .u-tree-title {
+            // background-color: var(--kui-color-main) !important;
+            // @include background-color("primary-30-30");
+            color: #fff;
+        }
+    }
+    .u-tree-item-drag {
+        > .u-tree-title {
+            // background-color: tint(var(--kui-color-main), 90%) !important;
+        }
+    }
+    .u-tree-item-extra {
+        flex: 1;
+        text-align: right;
+        z-index: 1;
+        padding-right: 4px;
+    }
+    .u-tree-item-extra-hidden {
+        .u-tree-item-extra {
+            display: none;
+        }
+        &:hover {
+            .u-tree-item-extra {
+                display: block;
+            }
+        }
+    }
+    .u-tree-item-disabled {
+        .u-tree-title,
+        .u-tree-icon {
+            // color: var(--kui-color-disable-color);
+            @include color("disable-color");
+            cursor: not-allowed;
+        }
+        .u-tree-title {
+            &:hover,
+            &:focus {
+                background-color: transparent;
+            }
+        }
+    }
+    .u-tree-title-selected {
+        // background: var(--kui-color-selected);
+        @include background("primary-30");
+        &:hover {
+            // background: var(--kui-color-selected);
+            @include background("primary-30");
+        }
+    }
+    .u-tree-arrow {
+        font-size: 14px;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        // text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(90deg);
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        // background-color: #fff;
+    }
+    .u-tree-arrow-open {
+        transform: rotate(180deg);
+    }
+    .u-tree-children {
+        // overflow: hidden;
+        transition: all 0.2s ease-in-out;
+    }
+    .tree-nodata {
+        padding: 8px 10px;
+        display: block;
+        // color: var(--kui-color-disable-color);
+        @include color("disable-color");
+        font-size: 12px;
+    }
+}
+
+.u-tree-directory {
+    position: relative;
+    .u-tree-title {
+        &:hover,
+        &:focus {
+            background-color: transparent;
+        }
+    }
+    .u-tree-item {
+        cursor: pointer;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 24px;
+            z-index: 0;
+            right: 0;
+            left: 0;
+            box-sizing: border-box;
+        }
+    }
+    .u-tree-item:hover {
+        &::before {
+            // background-color: var(--kui-color-hover);
+            @include background("primary-30");
+        }
+    }
+    .u-tree-item-selected,
+    .u-tree-item-selected:hover {
+        color: #fff;
+        .u-tree-title {
+            background-color: transparent;
+            color: #fff;
+        }
+        &::before {
+            // background-color: var(--kui-color-main);
+            @include background-color("primary-30");
+        }
+    }
+    .u-tree-item-disabled:hover {
+        cursor: not-allowed;
+        .u-tree-title {
+            // color: var(--kui-color-disable-color);
+            @include color("disable-color");
+        }
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.u-tree-show-line {
+    .u-tree-arrow {
+        transform: rotate(90deg);
+        .u-icon {
+            font-size: 16px;
+        }
+    }
+    .u-tree-commes {
+        &::before {
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: 0;
+            width: 1px;
+            height: 28px;
+            // background-color: var(--kui-color-border);
+            @include background-color("border-base");
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            width: 12px;
+            height: 1px;
+            // background-color: var(--kui-color-border);
+            @include background-color("border-base");
+        }
+    }
+    .u-tree-item-children > .u-tree-children {
+        &:last-child > .u-tree-item > .u-tree-commes {
+            &::before {
+                height: 12px;
+                top: 0;
+            }
+        }
+        &:first-child > .u-tree-item > .u-tree-commes {
+            &::before {
+                top: 0;
+            }
+        }
+    }
+    .u-tree-children .u-tree-item-children {
+        // border-left: 1px solid var(--kui-color-border);
+        @include border-left(1px, solid, "border-base");
+    }
+    .u-tree-arrow-open {
+        transform: rotate(180deg);
+    }
+    .u-tree-children:last-child {
+        > .u-tree-item-children {
+            border: none;
+        }
+    }
+}

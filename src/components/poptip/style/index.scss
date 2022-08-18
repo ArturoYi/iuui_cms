@@ -1,0 +1,196 @@
+.u-poptip {
+    display: inline-block;
+    position: relative;
+    // max-width: 300px;
+    // color: var(--kui-color-font);
+    @include color("color-primary");
+    font-size: 12px;
+    line-height: 1.5;
+    position: absolute;
+    z-index: 1001;
+    transform: translateZ(0);
+    &[u-placement^="top"] {
+        .u-poptip-arrow {
+            bottom: -7px;
+            height: 9px;
+        }
+        .u-poptip-content {
+            margin-bottom: 12px;
+        }
+    }
+    &[u-placement="top"] {
+        .u-poptip-arrow {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &[u-placement="top-right"] {
+        .u-poptip-arrow {
+            right: 12px;
+        }
+    }
+    &[u-placement="top-left"] {
+        .u-poptip-arrow {
+            left: 12px;
+        }
+    }
+    &[u-placement^="bottom"] {
+        .u-poptip-arrow {
+            top: -7px;
+            height: 9px;
+            transform: rotate(180deg);
+        }
+        .u-poptip-content {
+            margin-top: 12px;
+        }
+    }
+    &[u-placement="bottom"] {
+        .u-poptip-arrow {
+            left: 50%;
+            transform: translateX(-50%) rotate(180deg);
+        }
+    }
+    &[u-placement="bottom-left"] {
+        .u-poptip-arrow {
+            left: 12px;
+        }
+    }
+    &[u-placement="bottom-right"] {
+        .u-poptip-arrow {
+            right: 12px;
+        }
+    }
+    &[u-placement^="left"] {
+        .u-poptip-arrow {
+            right: -14px;
+            width: 24px;
+            height: 7px;
+            transform: rotate(-90deg);
+        }
+        .u-poptip-content {
+            margin-right: 12px;
+        }
+    }
+    &[u-placement="left"] {
+        .u-poptip-arrow {
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+        }
+    }
+    &[u-placement="left-bottom"] {
+        .u-poptip-arrow {
+            bottom: 12px;
+        }
+    }
+    &[u-placement="left-top"] {
+        .u-poptip-arrow {
+            top: 12px;
+        }
+    }
+    &[u-placement^="right"] {
+        .u-poptip-arrow {
+            left: -14px;
+            width: 24px;
+            height: 7px;
+            transform: rotate(90deg);
+        }
+        .u-poptip-content {
+            margin-left: 12px;
+        }
+    }
+    &[u-placement="right"] {
+        .u-poptip-arrow {
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+        }
+    }
+    &[u-placement="right-top"] {
+        .u-poptip-arrow {
+            top: 12px;
+        }
+    }
+    &[u-placement="right-bottom"] {
+        .u-poptip-arrow {
+            bottom: 12px;
+        }
+    }
+}
+
+.u-poptip-content {
+    min-width: 200px;
+    // .u-poptip-inner {
+    // background: var(--kui-color-control-10);
+    @include background("background-base");
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: $radius;
+    position: relative;
+    // }
+    .u-poptip-body {
+        font-size: 14px;
+        padding: 8px 16px;
+        box-sizing: border-box;
+    }
+    .u-poptip-title {
+        font-size: 16px;
+        font-weight: 500;
+        // color: var(--kui-color-font);
+        @include color("color-primary");
+        margin: 0;
+        padding: 8px 16px;
+        position: relative;
+        // border-bottom: 1px solid var(--kui-color-gray-80);
+        @include border-bottom(1px, solid, "gray-80");
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .u-poptip-arrow {
+        position: absolute;
+        box-sizing: border-box;
+        display: flex;
+        width: 24px;
+        height: 7px;
+        // color: var(--kui-color-control-10);
+        @include color("background-base");
+    }
+}
+
+.u-poptip-dark {
+    // background-color: var(--kui-color-dark);
+    @include background-color("background-base");
+    color: #fff;
+    .u-poptip-title {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+}
+
+@keyframes pop-zoom-in {
+    from {
+        opacity: 0;
+        transform: scale(0.8, 0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes pop-zoom-out {
+    from {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8, 0.8);
+    }
+}
+
+.u-poptip-enter-active {
+    // transform-origin: center bottom;
+    animation: pop-zoom-in 0.3s;
+}
+
+.u-poptip-leave-active {
+    // transform-origin: center bottom;
+    animation: pop-zoom-out 0.3s;
+}
