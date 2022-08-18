@@ -13,7 +13,7 @@ echo ${pushmessage}
 # githubUrl=git@github.com:540765/CYR.git
 
 #git status;
-sudo chmod 755 push.sh
+sudo chmod 777 push.sh
 git init 
 git config --global user.name "陈柒"
 git config --global user.email "3062995371@qq.com"
