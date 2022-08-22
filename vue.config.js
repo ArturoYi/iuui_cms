@@ -47,7 +47,7 @@ module.exports = defineConfig({
     // css預設
     loaderOptions: {
       scss: {
-      //   //這裡寫成函數以後出現重複導入報錯時可快速處理
+        //   //這裡寫成函數以後出現重複導入報錯時可快速處理
         additionalData: '@import "@/assets/style/theme/handleThemes.scss";',
       },
       sass: {
@@ -103,7 +103,7 @@ module.exports = defineConfig({
     //     test: new RegExp("\\.(" + productionGzipExtensions.join("|") + ")$"),
     //     threshold: 10240, //内容超过10KB进行压缩
     //     minRatio: 0.8,
-    //   }),
+    //   })
     // ],
     externals: [
       {
