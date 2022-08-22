@@ -283,7 +283,7 @@ export default {
 }
 
 .media {
-  @media (min-width: 1200px) and(max-width: 1600px) {
+  @media (min-width: 1200px) and (max-width: 1600px) {
     width: 18.5rem;
   }
   @media (min-width: 1600px) {

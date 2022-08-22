@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkhello_wold"]=self["webpackChunkhello_wold"]||[]).push([[730],{730:function(l,n,u){u.r(n),u.d(n,{default:function(){return c}});var e=function(){var l=this,n=l._self._c;return n("div",[l._v("404")])},t=[],r=u(1001),o={},s=(0,r.Z)(o,e,t,!1,null,null,null),c=s.exports}}]);
+//# sourceMappingURL=730.bf8fe3ac.js.map

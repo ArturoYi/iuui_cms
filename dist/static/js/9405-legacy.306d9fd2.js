@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkhello_wold"]=self["webpackChunkhello_wold"]||[]).push([[9405],{9405:function(e,n,l){l.r(n),l.d(n,{default:function(){return d}});var t=function(){var e=this,n=e.$createElement,l=e._self._c||n;return l("div",[e._v("1")])},u=[],r={data:function(){return{}}},c=r,o=l(1001),a=(0,o.Z)(c,t,u,!1,null,"9cd6d5ec",null),d=a.exports}}]);
-//# sourceMappingURL=9405-legacy.306d9fd2.js.map

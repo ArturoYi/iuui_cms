@@ -21,9 +21,7 @@
     "jshint": "^2.13.5",
     "path-browserify": "^1.0.1",
     "postcss-plugin-px2rem": "^0.8.1",
-    "sass-loader": "^7.3.1",
     "script-loader": "^0.7.2",
-    "scss-loader": "0.0.1",
     "vue": "^2.6.14",
     "vue-codemirror": "^4.0.6",
     "vue-i18n": "^8.26.7",
@@ -46,8 +44,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
     "prettier": "^2.4.1",
-    "sass": "^1.53.0",
-    "scss": "^0.2.4",
+    "sass": "^1.54.5",
+    "sass-loader": "^10.3.1",
     "vue-template-compiler": "^2.6.14"
   }
 }

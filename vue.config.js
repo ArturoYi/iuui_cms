@@ -94,6 +94,18 @@ module.exports = defineConfig({
           include: /node_modules/,
           type: "javascript/auto",
         },
+        // {
+        //   test: /\.s[ac]ss$/i,
+        //   use: [
+        //     'style-loader',
+        //     'css-loader',
+        //     {
+        //       loader: 'sass-loader',
+        //       options: {
+        //       },
+        //     },
+        //   ],
+        // },
       ],
     },
     // plugins: [
