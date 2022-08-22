@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ $# -eq 0 ]
 then 
-    pushmessage=`date +%Y-%m-%d`
+    pushmessage=`date +%Y-%m-%d fix 正常更新`
 else
     pushmessage="$*"
 fi
