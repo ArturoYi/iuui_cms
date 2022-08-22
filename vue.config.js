@@ -48,7 +48,7 @@ module.exports = defineConfig({
     loaderOptions: {
       scss: {
         //   //這裡寫成函數以後出現重複導入報錯時可快速處理
-        additionalData: '@import "@/assets/style/theme/handleThemes.scss";',
+        additionalData: '@import "@/assets/index.scss";',
       },
       sass: {
         implmentation: require("sass"),// This line must in sass option
