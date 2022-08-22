@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="indexOne">
-      <div class="item"><div class="card">🍊想回家种田🍊</div></div>
+      <div class="item"><div class="card">种🍊</div></div>
       <div @click="httpClick" class="item">
         <div class="card">{{ content }}</div>
       </div>
       <div @click="clickThere" class="item">
         <div class="card poker">{{ poker }}</div>
       </div>
-      <div class="item"><div class="card">🍊我喜欢这个，🍊UI</div></div>
+      <div class="item"><div class="card">🍊我喜欢这个🍊，🍊橙子UI🍊</div></div>
     </div>
     <!-- 组件 -->
     <div class="indexTwo">

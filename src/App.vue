@@ -10,7 +10,7 @@ export default {
   },
   watch: {
     $route() {
-      document.title = "🍊🍊";
+      document.title = "🍊IU_UI🍊";
     },
   },
   mounted() {},
