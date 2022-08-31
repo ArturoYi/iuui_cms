@@ -8,7 +8,7 @@ fi
 
 #pushmessage=`date +%Y-%m-%d`
 
-echo ${pushmessage}
+# echo ${pushmessage}
 
 # githubUrl=git@github.com:540765/CYR.git
 
@@ -18,6 +18,6 @@ echo ${pushmessage}
 # git config --global user.name "陈柒"
 # git config --global user.email "3062995371@qq.com"
 git add .; #添加所有的更新，.只能添加最新的更新
-git commit -m "${pushmessage}";
+git commit -m "2022-0-31";
 # git remote add origin git@gitee.com:chen_qi/iuui-cms.git
 git push -u origin master;
